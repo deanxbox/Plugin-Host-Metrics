@@ -11,7 +11,7 @@
 ### Changed
 
 - The metrics interval setting is now called History sampling interval
-- Low CPU and memory load shows in the theme colour instead of green
+- Low CPU and memory load shows in the accent colour instead of green
 
 ### Fixed
 
