@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+
+### Added
+
+- Busiest hosts dashboard card: the hosts with the highest CPU or memory, from samples already collected
+
 ## 1.1.0
 
 ### Added

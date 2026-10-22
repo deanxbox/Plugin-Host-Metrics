@@ -107,6 +107,40 @@ export function registerRoutes(router: Router, deps: RouteDeps): void {
 
   /**
    * @openapi
+   * /plugin-api/host-metrics/metrics/summary:
+   *   get:
+   *     summary: Latest CPU, memory and disk for every host
+   *     description: The newest sample already collected for each host the caller can connect to. It never starts collection, so hosts nobody looked at lately are missing. Feeds the dashboard card.
+   *     tags:
+   *       - Host Metrics
+   *     responses:
+   *       200:
+   *         description: One entry per host with a recent sample.
+   */
+  router.get("/metrics/summary", async (_req, res) => {
+    if (!actor(res)) return;
+    const out: Array<{
+      hostId: number;
+      cpu: number | null;
+      memory: number | null;
+      disk: number | null;
+      lastChecked: string;
+    }> = [];
+    for (const sample of poller.latestSamples()) {
+      if (!(await canConnect(sample.hostId))) continue;
+      out.push({
+        hostId: sample.hostId,
+        cpu: sample.data.cpu?.percent ?? null,
+        memory: sample.data.memory?.percent ?? null,
+        disk: sample.data.disk?.percent ?? null,
+        lastChecked: new Date(sample.timestamp).toISOString(),
+      });
+    }
+    res.json(out);
+  });
+
+  /**
+   * @openapi
    * /plugin-api/host-metrics/metrics/{id}:
    *   get:
    *     summary: Get host metrics

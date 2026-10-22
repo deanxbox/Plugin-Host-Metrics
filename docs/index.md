@@ -22,6 +22,10 @@ Open the Host Metrics button on the right edge of an SSH terminal, or Metrics pa
 
 In Settings, Host Metrics you can open the panel with every new terminal, pick its side and size, and hide the edge button. Turn off Show metrics panel in terminals in the host's Host Metrics section to keep it from opening there.
 
+## Busiest hosts card
+
+Add the Busiest hosts card in the dashboard's edit mode. It ranks hosts by CPU or memory, whichever is higher, using samples Termix already collected, so it never opens new SSH connections. A host shows once something has collected its metrics, like its metrics tab or the host status card.
+
 ## History
 
 The clock button on a card opens its history chart: the last 1 hour, 6 hours, 24 hours, 7 days, 30 days, or a range you pick.
