@@ -41,7 +41,7 @@ describe("viewProcesses", () => {
 });
 describe("loadColor", () => {
   it("goes green, amber, red", () => {
-    expect(loadColor(10)).toContain("emerald");
+    expect(loadColor(10)).toContain("primary");
     expect(loadColor(60)).toContain("amber");
     expect(loadColor(95)).toContain("red");
   });

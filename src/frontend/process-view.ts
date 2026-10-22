@@ -60,7 +60,7 @@ export function viewProcesses(
 /** Bar colour by load, like htop's meters. */
 export const loadColor = (pct: number | null) =>
   pct == null || pct < 50
-    ? "bg-emerald-500"
+    ? "bg-primary"
     : pct < 80
       ? "bg-amber-500"
       : "bg-red-500";
@@ -68,7 +68,7 @@ export const loadColor = (pct: number | null) =>
 /** Same thresholds as loadColor, as a text colour for the gauge arc. */
 export const loadTextColor = (pct: number | null) =>
   pct == null || pct < 50
-    ? "text-emerald-500"
+    ? "text-primary"
     : pct < 80
       ? "text-amber-500"
       : "text-red-500";
