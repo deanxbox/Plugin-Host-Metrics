@@ -110,11 +110,11 @@ export function MemoryCard({
                 <div className="flex flex-col gap-0.5">
                   <div className="flex h-1.5 w-full bg-muted">
                     <div
-                      className="bg-emerald-500"
+                      className="bg-accent-brand"
                       style={{ width: `${parts.used}%` }}
                     />
                     <div
-                      className="bg-amber-500"
+                      className="bg-accent-brand/40"
                       style={{ width: `${parts.cache}%` }}
                     />
                   </div>

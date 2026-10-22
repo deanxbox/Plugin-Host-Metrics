@@ -9,7 +9,7 @@ const LIVE_METRICS = ["cpu", "memory", "network", "processes"];
 type MetricKey =
   "cpu" | "memory" | "disk" | "uptime" | "system" | "network" | "processes";
 
-function RowBar({ label, value }: { label: string; value: number }) {
+export function RowBar({ label, value }: { label: string; value: number }) {
   const tone =
     value >= 90
       ? ["bg-red-500", "text-red-400"]

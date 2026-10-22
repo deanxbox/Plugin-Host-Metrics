@@ -352,5 +352,10 @@
   "plugin": {
     "name": "Host Metrics",
     "description": "Live CPU, memory, disk, network and GPU stats, plus tools to manage your hosts."
+  },
+  "card": {
+    "title": "Busiest hosts",
+    "loading": "Loading...",
+    "empty": "No recent samples yet. Hosts show here once their metrics are collected, like while the host status card is open."
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "host-metrics",
   "name": "Host Metrics",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Live CPU, memory, disk, network and GPU stats, plus tools to manage your hosts.",
   "author": {
     "name": "Termix"
@@ -19,7 +19,8 @@
     "Health checks for your hosts and services",
     "A layout you can rearrange per host",
     "Live stats in the terminal toolbar",
-    "A live metrics panel beside any SSH terminal"
+    "A live metrics panel beside any SSH terminal",
+    "A dashboard card with the hosts working hardest"
   ],
   "env": [
     {
@@ -262,6 +263,13 @@
       "homepage.hostMetrics",
       "homepage.widgets",
       "terminal.toolbarStatus"
+    ],
+    "dashboardCards": [
+      {
+        "id": "busiest-hosts",
+        "titleKey": "card.title",
+        "icon": "Activity"
+      }
     ]
   },
   "locales": "locales",

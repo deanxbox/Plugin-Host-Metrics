@@ -102,19 +102,19 @@ export function CpuCard({
                 <div className="flex flex-col gap-0.5">
                   <div className="flex h-1.5 w-full bg-muted">
                     <div
-                      className="bg-emerald-500"
+                      className="bg-accent-brand"
                       style={{ width: `${metrics.cpu.mix.user}%` }}
                     />
                     <div
-                      className="bg-red-500"
+                      className="bg-accent-brand/70"
                       style={{ width: `${metrics.cpu.mix.system}%` }}
                     />
                     <div
-                      className="bg-sky-500"
+                      className="bg-accent-brand/45"
                       style={{ width: `${metrics.cpu.mix.iowait}%` }}
                     />
                     <div
-                      className="bg-purple-500"
+                      className="bg-accent-brand/25"
                       style={{ width: `${metrics.cpu.mix.steal}%` }}
                     />
                   </div>
