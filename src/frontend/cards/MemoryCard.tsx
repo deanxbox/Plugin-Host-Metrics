@@ -114,7 +114,7 @@ export function MemoryCard({
                       style={{ width: `${parts.used}%` }}
                     />
                     <div
-                      className="bg-amber-500"
+                      className="bg-accent-brand/40"
                       style={{ width: `${parts.cache}%` }}
                     />
                   </div>
