@@ -1,4 +1,4 @@
-import type { GpuMetrics } from "./stats-widgets.js";
+import type { GpuMetrics, FirewallMetrics } from "./stats-widgets.js";
 
 /** What GET /metrics/:id answers. */
 interface CpuMetrics {
@@ -84,24 +84,7 @@ export interface ListeningPort {
   process?: string;
 }
 
-interface FirewallRule {
-  chain: string;
-  target: string;
-  protocol: string;
-  source: string;
-  destination: string;
-  dport?: string;
-  sport?: string;
-  state?: string;
-  interface?: string;
-  extra?: string;
-}
-
-export interface FirewallChain {
-  name: string;
-  policy: string;
-  rules: FirewallRule[];
-}
+export type { FirewallChain } from "./stats-widgets.js";
 
 /** One 1s /proc sample from GET /host-metrics/managers/live/:id. */
 export interface LiveSample {
@@ -158,11 +141,7 @@ export type ServerMetrics = {
     source?: "ss" | "netstat" | "none";
     ports?: ListeningPort[];
   };
-  firewall?: {
-    type?: "iptables" | "nftables" | "none";
-    status?: "active" | "inactive" | "unknown";
-    chains?: FirewallChain[];
-  };
+  firewall?: Partial<FirewallMetrics>;
   temperature?: {
     source?: "sysfs" | "sensors" | "none";
     highestCelsius?: number | null;
